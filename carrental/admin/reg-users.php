@@ -10,7 +10,9 @@ else{
 if(isset($_GET['del']))
 {
 $id=$_GET['del'];
+
 $sql = "delete from tblbrands  WHERE id=:id";
+
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> execute();
@@ -19,8 +21,7 @@ $msg="Page data updated  successfully";
 }
 
 
-
- ?>
+	?>
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -51,7 +52,7 @@ $msg="Page data updated  successfully";
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
+<style>
 		.errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
@@ -76,88 +77,87 @@ $msg="Page data updated  successfully";
 	<?php include('includes/header.php');?>
 
 	<div class="ts-main-content">
-		<?php include('includes/leftbar.php');?>
-		<div class="content-wrapper">
-			<div class="container-fluid">
+	<?php include('includes/leftbar.php');?>
+	<div class="content-wrapper">
+		<div class="container-fluid">
 
-				<div class="row">
-					<div class="col-md-12">
+	<div class="row">
+	<div class="col-md-12">
 
-						<h2 class="page-title">Registered Users</h2>
+	<h2 class="page-title">Registered Users</h2>
 
-						<!-- Zero Configuration Table -->
-						<div class="panel panel-default">
-							<div class="panel-heading">Reg Users</div>
-							<div class="panel-body">
-							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
-								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-									<thead>
-										<tr>
-										<th>#</th>
-												<th> Name</th>
-											<th>Email </th>
-											<th>Contact no</th>
-										<th>DOB</th>
-										<th>Address</th>
-										<th>City</th>
-										<th>Country</th>
-										<th>Reg Date</th>
-										
-										</tr>
-									</thead>
-									<tfoot>
-										<tr>
-										<th>#</th>
-											<th> Name</th>
-											<th>Email </th>
-											<th>Contact no</th>
-										<th>DOB</th>
-										<th>Address</th>
-										<th>City</th>
-										<th>Country</th>
-										<th>Reg Date</th>
-										</tr>
-										</tr>
-									</tfoot>
-									<tbody>
+	<!-- Zero Configuration Table -->
+	<div class="panel panel-default">
+	<div class="panel-heading">Reg Users</div>
+	<div class="panel-body">
+	<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+		else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+		<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+<thead>
+	<tr>
+		<th>#</th>
+		<th> Name</th>
+		<th>Email </th>
+		<th>Contact no</th>
+		<th>DOB</th>
+		<th>Address</th>
+		<th>City</th>
+		<th>Country</th>
+		<th>Reg Date</th>
 
-									<?php $sql = "SELECT * from  tblusers ";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				?>	
-										<tr>
-											<td><?php echo htmlentities($cnt);?></td>
-											<td><?php echo htmlentities($result->FullName);?></td>
-											<td><?php echo htmlentities($result->EmailId);?></td>
-											<td><?php echo htmlentities($result->ContactNo);?></td>
-	<td><?php echo htmlentities($result->dob);?></td>
-											<td><?php echo htmlentities($result->Address);?></td>
-											<td><?php echo htmlentities($result->City);?></td>
-											<td><?php echo htmlentities($result->Country);?></td>
-											<td><?php echo htmlentities($result->RegDate);?></td>
-										</tr>
-										<?php $cnt=$cnt+1; }} ?>
-										
-									</tbody>
-								</table>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<th>#</th>
+		<th> Name</th>
+		<th>Email </th>
+		<th>Contact no</th>
+		<th>DOB</th>
+		<th>Address</th>
+		<th>City</th>
+		<th>Country</th>
+		<th>Reg Date</th>
+	</tr>
+	</tr>
+	</tfoot>
+<tbody>
 
-						
+	<?php 
+	$sql = "SELECT * from  tblusers ";
 
-							</div>
-						</div>
+	$query = $dbh -> prepare($sql);
+	$query->execute();
+	$results=$query->fetchAll(PDO::FETCH_OBJ);
+	$cnt=1;
+	if($query->rowCount() > 0)
+	{
+	foreach($results as $result)
+	{	?>	
+	<tr>
+		<td><?php echo htmlentities($cnt);?></td>
+		<td><?php echo htmlentities($result->FullName);?></td>
+		<td><?php echo htmlentities($result->EmailId);?></td>
+		<td><?php echo htmlentities($result->ContactNo);?></td>
+		<td><?php echo htmlentities($result->dob);?></td>
+		<td><?php echo htmlentities($result->Address);?></td>
+		<td><?php echo htmlentities($result->City);?></td>
+		<td><?php echo htmlentities($result->Country);?></td>
+		<td><?php echo htmlentities($result->RegDate);?></td>
+	</tr>
+		<?php $cnt=$cnt+1; }} ?>
+	
+	</tbody>
+</table>
 
-					
 
-					</div>
-				</div>
+</div>
+	</div>
 
-			</div>
+	</div>
+</div>
+
+	</div>
 		</div>
 	</div>
 

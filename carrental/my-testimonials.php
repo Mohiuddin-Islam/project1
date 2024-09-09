@@ -148,7 +148,7 @@ foreach($results as $result)
 </section>
 <!--/my-vehicles--> 
 
-<<!--Footer -->
+<!--Footer -->
 <?php include('includes/footer.php');?>
 <!-- /Footer--> 
 

@@ -13,7 +13,9 @@ if($query -> rowCount() > 0)
 echo "<script>alert('Already Subscribed.');</script>";
 }
 else{
-$sql="INSERT INTO  tblsubscribers(SubscriberEmail) VALUES(:subscriberemail)";
+
+  $sql="INSERT INTO  tblsubscribers(SubscriberEmail) VALUES(:subscriberemail)";
+  
 $query = $dbh->prepare($sql);
 $query->bindParam(':subscriberemail',$subscriberemail,PDO::PARAM_STR);
 $query->execute();

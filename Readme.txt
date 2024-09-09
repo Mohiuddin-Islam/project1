@@ -19,5 +19,6 @@ Password: Test@123
 **************For Admin Panel***********************************
 Open Your browser put inside browser “http://localhost/carrental/admin”
 Login Details for admin :
-Username: admin
-Password: Test@12345
+
+Username: Mohiuddin
+Password: mohiuddin@955

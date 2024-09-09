@@ -87,7 +87,9 @@ $cnt=$query->rowCount();
 </div>
 </div>
 
-<?php $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
+<?php 
+$sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
+
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -111,7 +113,7 @@ foreach($results as $result)
           </div>
         </div>
       <?php }} ?>
-         </div>
+        </div>
       
       <!--Side-Bar-->
       <aside class="col-md-3 col-md-pull-9">
@@ -136,18 +138,18 @@ foreach($results as $result)
 {       ?>  
 <option value="<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?></option>
 <?php }} ?>
-                 
-                </select>
-              </div>
-              <div class="form-group select">
-                <select class="form-control" name="fueltype">
-                  <option>Select Fuel Type</option>
+  
+      </select>
+      </div>
+      <div class="form-group select">
+        <select class="form-control" name="fueltype">
+        <option>Select Fuel Type</option>
 <option value="Petrol">Petrol</option>
 <option value="Diesel">Diesel</option>
 <option value="CNG">CNG</option>
                 </select>
               </div>
-             
+          
               <div class="form-group">
                 <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search Car</button>
               </div>
@@ -161,7 +163,9 @@ foreach($results as $result)
           </div>
           <div class="recent_addedcars">
             <ul>
-<?php $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by id desc limit 4";
+<?php 
+$sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand order by id desc limit 4";
+
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -171,17 +175,17 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {  ?>
 
-              <li class="gray-bg">
-                <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="image"></a> </div>
-                <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a>
-                  <p class="widget_price">$<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
-                </div>
-              </li>
-              <?php }} ?>
-              
-            </ul>
-          </div>
+        <li class="gray-bg">
+        <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="image"></a> </div>
+        <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a>
+          <p class="widget_price">$<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
         </div>
+      </li>
+        <?php }} ?>
+              
+      </ul>
+      </div>
+      </div>
       </aside>
       <!--/Side-Bar--> 
     </div>

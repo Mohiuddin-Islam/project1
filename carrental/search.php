@@ -95,6 +95,7 @@ $cnt=$query->rowCount();
 $sql = "SELECT tblvehicles.*,tblbrands.BrandName,tblbrands.id as bid  from tblvehicles 
 join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand 
 where tblvehicles.VehiclesTitle=:search || tblvehicles.FuelType=:search || tblbrands.BrandName=:search || tblvehicles.ModelYear=:search";
+
 $query = $dbh -> prepare($sql);
 $query -> bindParam(':search',$searchdata, PDO::PARAM_STR);
 $query->execute();
@@ -181,13 +182,13 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {  ?>
 
-              <li class="gray-bg">
-                <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="image"></a> </div>
-                <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a>
-                  <p class="widget_price">$<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
-                </div>
-              </li>
-              <?php }} ?>
+        <li class="gray-bg">
+          <div class="recent_post_img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" alt="image"></a> </div>
+          <div class="recent_post_title"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a>
+          <p class="widget_price">$<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
+          </div>
+            </li>
+            <?php }} ?>
               
             </ul>
           </div>

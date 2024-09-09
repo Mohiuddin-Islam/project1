@@ -8,7 +8,9 @@ $name=$_POST['fullname'];
 $email=$_POST['email'];
 $contactno=$_POST['contactno'];
 $message=$_POST['message'];
-$sql="INSERT INTO  tblcontactusquery(name,EmailId,ContactNumber,Message) VALUES(:name,:email,:contactno,:message)";
+
+  $sql="INSERT INTO  tblcontactusquery(name,EmailId,ContactNumber,Message) VALUES(:name,:email,:contactno,:message)";
+  
 $query = $dbh->prepare($sql);
 $query->bindParam(':name',$name,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
@@ -83,7 +85,7 @@ $error="Something went wrong. Please try again";
 </head>
 <body>
 
-<<!-- Start Switcher -->
+<!-- Start Switcher -->
 <?php include('includes/colorswitcher.php');?>
 <!-- /Switcher -->  
         

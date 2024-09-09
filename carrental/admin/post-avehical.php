@@ -9,7 +9,7 @@ header('location:index.php');
 else{ 
 
 if(isset($_POST['submit']))
-  {
+{
 $vehicletitle=$_POST['vehicletitle'];
 $brand=$_POST['brandname'];
 $vehicleoverview=$_POST['vehicalorcview'];
@@ -40,7 +40,8 @@ move_uploaded_file($_FILES["img3"]["tmp_name"],"img/vehicleimages/".$_FILES["img
 move_uploaded_file($_FILES["img4"]["tmp_name"],"img/vehicleimages/".$_FILES["img4"]["name"]);
 move_uploaded_file($_FILES["img5"]["tmp_name"],"img/vehicleimages/".$_FILES["img5"]["name"]);
 
-$sql="INSERT INTO tblvehicles(VehiclesTitle,VehiclesBrand,VehiclesOverview,PricePerDay,FuelType,ModelYear,SeatingCapacity,Vimage1,Vimage2,Vimage3,Vimage4,Vimage5,AirConditioner,PowerDoorLocks,AntiLockBrakingSystem,BrakeAssist,PowerSteering,DriverAirbag,PassengerAirbag,PowerWindows,CDPlayer,CentralLocking,CrashSensor,LeatherSeats) VALUES(:vehicletitle,:brand,:vehicleoverview,:priceperday,:fueltype,:modelyear,:seatingcapacity,:vimage1,:vimage2,:vimage3,:vimage4,:vimage5,:airconditioner,:powerdoorlocks,:antilockbrakingsys,:brakeassist,:powersteering,:driverairbag,:passengerairbag,:powerwindow,:cdplayer,:centrallocking,:crashcensor,:leatherseats)";
+	$sql="INSERT INTO tblvehicles(VehiclesTitle,VehiclesBrand,VehiclesOverview,PricePerDay,FuelType,ModelYear,SeatingCapacity,Vimage1,Vimage2,Vimage3,Vimage4,Vimage5,AirConditioner,PowerDoorLocks,AntiLockBrakingSystem,BrakeAssist,PowerSteering,DriverAirbag,PassengerAirbag,PowerWindows,CDPlayer,CentralLocking,CrashSensor,LeatherSeats) VALUES(:vehicletitle,:brand,:vehicleoverview,:priceperday,:fueltype,:modelyear,:seatingcapacity,:vimage1,:vimage2,:vimage3,:vimage4,:vimage5,:airconditioner,:powerdoorlocks,:antilockbrakingsys,:brakeassist,:powersteering,:driverairbag,:passengerairbag,:powerwindow,:cdplayer,:centrallocking,:crashcensor,:leatherseats)";
+
 $query = $dbh->prepare($sql);
 $query->bindParam(':vehicletitle',$vehicletitle,PDO::PARAM_STR);
 $query->bindParam(':brand',$brand,PDO::PARAM_STR);
@@ -136,21 +137,22 @@ $error="Something went wrong. Please try again";
 	<div class="ts-main-content">
 	<?php include('includes/leftbar.php');?>
 		<div class="content-wrapper">
-			<div class="container-fluid">
+		<div class="container-fluid">
 
-				<div class="row">
-					<div class="col-md-12">
-					
-						<h2 class="page-title">Post A Vehicle</h2>
+	<div class="row">
+	<div class="col-md-12">
+	
+	<h2 class="page-title">Post A Vehicle</h2>
 
-						<div class="row">
-							<div class="col-md-12">
-								<div class="panel panel-default">
-									<div class="panel-heading">Basic Info</div>
-<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
-				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+	<div class="row">
+	<div class="col-md-12">
+	<div class="panel panel-default">
+	<div class="panel-heading">Basic Info</div>
 
-									<div class="panel-body">
+	<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+	else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+
+	<div class="panel-body">
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 <div class="form-group">
 <label class="col-sm-2 control-label">Vehicle Title<span style="color:red">*</span></label>
@@ -177,7 +179,7 @@ foreach($results as $result)
 </select>
 </div>
 </div>
-											
+
 <div class="hr-dashed"></div>
 <div class="form-group">
 <label class="col-sm-2 control-label">Vehical Overview<span style="color:red">*</span></label>
@@ -251,7 +253,7 @@ Image 5<input type="file" name="img5">
 </div>
 </div>
 </div>
-							
+
 
 <div class="row">
 <div class="col-md-12">
@@ -337,29 +339,23 @@ Image 5<input type="file" name="img5">
 </div>
 
 
+	<div class="form-group">
+		<div class="col-sm-8 col-sm-offset-2">
+		<button class="btn btn-default" type="reset">Cancel</button>
+		<button class="btn btn-primary" name="submit" type="submit">Save changes</button>
+	</div>
+	</div>
 
+	</form>
+	</div>
+		</div>
+	</div>
+	</div>
 
-											<div class="form-group">
-												<div class="col-sm-8 col-sm-offset-2">
-													<button class="btn btn-default" type="reset">Cancel</button>
-													<button class="btn btn-primary" name="submit" type="submit">Save changes</button>
-												</div>
-											</div>
-
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-					
-
-					</div>
-				</div>
-				
-			
-
-			</div>
+	</div>
+	</div>
+	
+		</div>
 		</div>
 	</div>
 

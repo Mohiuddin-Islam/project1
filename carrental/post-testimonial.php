@@ -161,7 +161,7 @@ foreach($results as $result)
 </section>
 <!--/Profile-setting--> 
 
-<<!--Footer -->
+<!--Footer -->
 <?php include('includes/footer.php');?>
 <!-- /Footer--> 
 

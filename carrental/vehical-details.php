@@ -196,7 +196,7 @@ $_SESSION['brndid']=$result->bid;
 <?php if($result->AirConditioner==1)
 {
 ?>
-                      <td><i class="fa fa-check" aria-hidden="true"></i></td>
+      <td><i class="fa fa-check" aria-hidden="true"></i></td>
 <?php } else { ?> 
   <td><i class="fa fa-close" aria-hidden="true"></i></td>
   <?php } ?> </tr>
@@ -222,7 +222,7 @@ $_SESSION['brndid']=$result->bid;
 <td><i class="fa fa-close" aria-hidden="true"></i></td>
 <?php } ?>
 </tr>
-                  
+  
 
 <tr>
 
@@ -236,7 +236,7 @@ $_SESSION['brndid']=$result->bid;
 <td><i class="fa fa-close" aria-hidden="true"></i></td>
 <?php } ?>
 </tr>
-                  
+    
   <tr>
 <td>CD Player</td>
 <?php if($result->CDPlayer==1)

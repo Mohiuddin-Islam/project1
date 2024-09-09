@@ -22,7 +22,7 @@ $query -> execute();
 
 
 
- ?>
+?>
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -53,7 +53,7 @@ $query -> execute();
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
-  <style>
+<style>
 		.errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
@@ -80,45 +80,47 @@ $query -> execute();
 	<div class="ts-main-content">
 		<?php include('includes/leftbar.php');?>
 		<div class="content-wrapper">
-			<div class="container-fluid">
+	<div class="container-fluid">
 
-				<div class="row">
-					<div class="col-md-12">
+	<div class="row">
+		<div class="col-md-12">
 
-						<h2 class="page-title">Manage Contact Us Queries</h2>
+	<h2 class="page-title">Manage Contact Us Queries</h2>
 
-						<!-- Zero Configuration Table -->
-						<div class="panel panel-default">
-							<div class="panel-heading">User queries</div>
-							<div class="panel-body">
+	<!-- Zero Configuration Table -->
+		<div class="panel panel-default">
+		<div class="panel-heading">User queries</div>
+		<div class="panel-body">
 					
-								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
-									<thead>
-										<tr>
-										<th>#</th>
-											<th>Name</th>
-											<th>Email</th>
-											<th>Contact No</th>
-											<th>Message</th>
-											<th>Posting date</th>
-											<th>Action</th>
-										</tr>
-									</thead>
-									<tfoot>
-										<tr>
-										<th>#</th>
-											<th>Name</th>
-											<th>Email</th>
-											<th>Contact No</th>
-											<th>Message</th>
-											<th>Posting date</th>
-											<th>Action</th>
-										</tr>
-										</tr>
-									</tfoot>
-									<tbody>
+		<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Contact No</th>
+			<th>Message</th>
+			<th>Posting date</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Contact No</th>
+			<th>Message</th>
+			<th>Posting date</th>
+			<th>Action</th>
+		</tr>
+	</tr>
+</tfoot>
+<tbody>
 
-									<?php $sql = "SELECT * from  tblcontactusquery ";
+	<?php 
+	$sql = "SELECT * from  tblcontactusquery ";
+
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -126,15 +128,15 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{				?>	
-										<tr>
-											<td><?php echo htmlentities($cnt);?></td>
-											<td><?php echo htmlentities($result->name);?></td>
-											<td><?php echo htmlentities($result->EmailId);?></td>
-											<td><?php echo htmlentities($result->ContactNumber);?></td>
-											<td><?php echo htmlentities($result->Message);?></td>
-											<td><?php echo htmlentities($result->PostingDate);?></td>
-																<?php if($result->status==1)
+{	?>	
+	<tr>
+			<td><?php echo htmlentities($cnt);?></td>
+			<td><?php echo htmlentities($result->name);?></td>
+			<td><?php echo htmlentities($result->EmailId);?></td>
+			<td><?php echo htmlentities($result->ContactNumber);?></td>
+			<td><?php echo htmlentities($result->Message);?></td>
+			<td><?php echo htmlentities($result->PostingDate);?></td>
+			<?php if($result->status==1)
 {
 	?><td>Read</td>
 <?php } else {?>
@@ -142,23 +144,19 @@ foreach($results as $result)
 <td><a href="manage-conactusquery.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to read')" >Pending</a>
 </td>
 <?php } ?>
-										</tr>
-										<?php $cnt=$cnt+1; }} ?>
-										
-									</tbody>
-								</table>
+		</tr>
+		<?php $cnt=$cnt+1; }} ?>
+	
+		</tbody>
+	</table>
 
-						
+	</div>
+	</div>
 
-							</div>
-						</div>
+	</div>
+	</div>
 
-					
-
-					</div>
-				</div>
-
-			</div>
+		</div>
 		</div>
 	</div>
 

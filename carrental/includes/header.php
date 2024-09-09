@@ -4,14 +4,14 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-3 col-md-2">
-          <div class="logo"> <a href="index.php"><img height="50px" width="80px" src="assets/images/rent_car1.png" alt="image"/></a></div>
-          <div><h3 style="color: brown;">Road&nbsp;Trip&nbsp;Rentals</h3></div>
+          <div class="logo"> <a href="index.php"><img height="80px" width="350px" src="assets/images/rental3.png" alt="image"/></a></div>
+          <div><h3 style="color: brown;"></h3></div>
           
         </div>
         <div class="col-sm-9 col-md-10">
           <div class="header_info">
 
-        <?php
+      <?php
         $sql = "SELECT EmailId,ContactNo from tblcontactusinfo";
 $query = $dbh -> prepare($sql);
 $query->execute();
