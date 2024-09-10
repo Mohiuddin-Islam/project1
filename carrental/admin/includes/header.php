@@ -1,5 +1,5 @@
 <div class="brand clearfix">
-	<a href="dashboard.php" style="font-size: 25px;">Welcome To Road Trip Rental</a>  
+	<a href="dashboard.php" style="font-size: 25px;">Welcome To Admin Panel</a>  
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
 			
