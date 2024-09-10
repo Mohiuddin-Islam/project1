@@ -210,7 +210,7 @@ $_SESSION['brndid']=$result->bid;
 <?php } else {?>
 <td><i class="fa fa-close" aria-hidden="true"></i></td>
 <?php } ?>
-                    </tr>
+      </tr>
 
 <tr>
 <td>Power Steering</td>
@@ -249,9 +249,9 @@ $_SESSION['brndid']=$result->bid;
 </tr>
 
 <tr>
-<td>Leather Seats</td>
-<?php if($result->LeatherSeats==1)
-{
+  <td>Leather Seats</td>
+  <?php if($result->LeatherSeats==1)
+  {
 ?>
 <td><i class="fa fa-check" aria-hidden="true"></i></td>
 <?php } else { ?>
@@ -279,8 +279,8 @@ $_SESSION['brndid']=$result->bid;
 <?php } else { ?>
 <td><i class="fa fa-close" aria-hidden="true"></i></td>
 <?php } ?>
-                    </tr>
-                    <tr>
+      </tr>
+      <tr>
 <td>Brake Assist</td>
 <?php if($result->BrakeAssist==1)
 {

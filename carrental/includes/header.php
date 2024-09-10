@@ -11,8 +11,9 @@
         <div class="col-sm-9 col-md-10">
           <div class="header_info">
 
-      <?php
-        $sql = "SELECT EmailId,ContactNo from tblcontactusinfo";
+  <?php
+    $sql = "SELECT EmailId,ContactNo from tblcontactusinfo";
+
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -60,7 +61,9 @@ echo "<h6 style= 'color:green'>Welcome To Car Rental Portal</h6>";
             <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> 
 <?php 
 $email=$_SESSION['login'];
+
 $sql ="SELECT FullName FROM tblusers WHERE EmailId=:email ";
+
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
 $query-> execute();

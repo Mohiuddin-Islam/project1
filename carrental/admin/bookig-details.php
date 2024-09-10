@@ -29,6 +29,7 @@ $aeid=intval($_GET['aeid']);
 $status=1;
 
 $sql = "UPDATE tblbooking SET Status=:status WHERE  id=:aeid";
+
 $query = $dbh->prepare($sql);
 $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);

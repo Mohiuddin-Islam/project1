@@ -119,7 +119,7 @@ foreach($results as $result)
       <aside class="col-md-3 col-md-pull-9">
         <div class="sidebar_widget">
           <div class="widget_heading">
-            <h5><i class="fa fa-filter" aria-hidden="true"></i> Find Your  Car </h5>
+            <h5><i class="fa fa-filter" aria-hidden="true"></i> Find Your Car </h5>
           </div>
           <div class="sidebar_filter">
             <form action="search-carresult.php" method="post">
@@ -139,14 +139,14 @@ foreach($results as $result)
 <option value="<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?></option>
 <?php }} ?>
   
-      </select>
-      </div>
-      <div class="form-group select">
+    </select>
+  </div>
+  <div class="form-group select">
         <select class="form-control" name="fueltype">
         <option>Select Fuel Type</option>
-<option value="Petrol">Petrol</option>
-<option value="Diesel">Diesel</option>
-<option value="CNG">CNG</option>
+    <option value="Petrol">Petrol</option>
+    <option value="Diesel">Diesel</option>
+    <option value="CNG">CNG</option>
                 </select>
               </div>
           

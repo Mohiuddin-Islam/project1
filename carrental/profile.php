@@ -112,7 +112,9 @@ $msg="Profile Updated Successfully";
 
 <?php 
 $useremail=$_SESSION['login'];
+
 $sql = "SELECT * from tblusers where EmailId=:useremail";
+
 $query = $dbh -> prepare($sql);
 $query -> bindParam(':useremail',$useremail, PDO::PARAM_STR);
 $query->execute();

@@ -67,6 +67,7 @@ $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $regusers=$query->rowCount();
+
 ?>
 	<div class="stat-panel-number h1 "><?php echo htmlentities($regusers);?></div>
 	<div class="stat-panel-title text-uppercase">Reg Users</div>
@@ -144,7 +145,6 @@ $brands=$query3->rowCount();
 	</div>
 	</div>
 	</div>
-
 
 
 <div class="row">
