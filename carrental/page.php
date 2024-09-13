@@ -47,7 +47,8 @@ include('includes/config.php');
         
 <!--Header-->
 <?php include('includes/header.php');?>
-                      <?php 
+
+  <?php 
 $pagetype=$_GET['type'];
 $sql = "SELECT type,detail,PageName from tblpages where type=:pagetype";
 $query = $dbh -> prepare($sql);
