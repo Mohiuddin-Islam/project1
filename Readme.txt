@@ -1,6 +1,8 @@
+Car Rental:
+
 Admin:
-Username: mohiuddin
-Password: mohiuddin955
+Username: admin@gmail.com
+Password: admin123
 
 Client User: 	
 Email: mohiuddin@gmail.com

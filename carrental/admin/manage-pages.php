@@ -137,9 +137,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 		<div class="col-sm-8">
 		<select name="menu1" onChange="MM_jumpMenu('parent',this,0)">
                 <option value="" selected="selected" class="form-control">***Select One***</option>
-                <option value="manage-pages.php?type=terms">terms and condition</option>
-                <option value="manage-pages.php?type=privacy">privacy and policy</option>
-                <option value="manage-pages.php?type=aboutus">aboutus</option> 
+                <option value="manage-pages.php?type=terms">Terms and Condition</option>
+                <option value="manage-pages.php?type=privacy">Privacy and Policy</option>
+                <option value="manage-pages.php?type=aboutus">About-Us</option> 
                 <option value="manage-pages.php?type=faqs">FAQs</option>
                 </select>
 		</div>
@@ -183,9 +183,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 		<label class="col-sm-4 control-label">Page Details </label>
 		<div class="col-sm-8">
 	<textarea class="form-control" rows="5" cols="50" name="pgedetails" id="pgedetails" placeholder="Package Details" required>
-										<?php 
+<?php 
 $pagetype=$_GET['type'];
+
 $sql = "SELECT detail from tblpages where type=:pagetype";
+
 $query = $dbh -> prepare($sql);
 $query->bindParam(':pagetype',$pagetype,PDO::PARAM_STR);
 $query->execute();
